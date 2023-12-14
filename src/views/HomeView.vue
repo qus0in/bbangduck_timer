@@ -7,7 +7,7 @@
       <span @click="() => (isStarted ? stopTimer() : startTimer())">
         {{ displayHour }}:{{ displayMinute }}
       </span>
-      <CContainer class="d-flex flex-column mt-3" style="height: 64px">
+      <CContainer class="d-flex flex-column mt-3" style="height: 80px" @dblclick="settingTime(1)">
         <Transition>
           <CButtonGroup v-if="!isStarted" role="group" class="mt-2">
             <CButton
@@ -45,7 +45,7 @@ const startTimer = () => {
     if (time.value > 0) {
       time.value--
     } else {
-      const audio = new Audio('./reception-bell.mp3')
+      const audio = new Audio('./alarm-clock-short.mp3')
       audio.play()
       isStarted.value = false
       clearInterval(interval)
