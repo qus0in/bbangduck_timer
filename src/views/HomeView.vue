@@ -45,7 +45,7 @@ const startTimer = () => {
     if (time.value > 0) {
       time.value--
     } else {
-      const audio = new Audio('./public/reception-bell.mp3')
+      const audio = new Audio('./reception-bell.mp3')
       audio.play()
       isStarted.value = false
       clearInterval(interval)
